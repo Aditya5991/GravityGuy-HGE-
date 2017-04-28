@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{287F3351-787D-4CBE-B569-23956B88E967}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Win32HGE</RootNamespace>
+    <ProjectName>HaxBall</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(ProjectDir);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>precompiled.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>hge.lib;hgehelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="Broadcaster.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Coin.h" />
+    <ClInclude Include="CoinManager.h" />
+    <ClInclude Include="CollisionLogic.h" />
+    <ClInclude Include="CollisionManager.h" />
+    <ClInclude Include="Cursor.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityList.h" />
+    <ClInclude Include="EventIdentifier.h" />
+    <ClInclude Include="EventManager.h" />
+    <ClInclude Include="Field.h" />
+    <ClInclude Include="FontResource.h" />
+    <ClInclude Include="Force.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameAppFramework.h" />
+    <ClInclude Include="GameRunning.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateChangeEvent.h" />
+    <ClInclude Include="GameStateManager.h" />
+    <ClInclude Include="GetToPreviousStateEvent.h" />
+    <ClInclude Include="GoalPost.h" />
+    <ClInclude Include="GoalScoredEvent.h" />
+    <ClInclude Include="ICollidable.h" />
+    <ClInclude Include="IEvent.h" />
+    <ClInclude Include="IGameState.h" />
+    <ClInclude Include="ILevel.h" />
+    <ClInclude Include="IListener.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="IObject.h" />
+    <ClInclude Include="IResource.h" />
+    <ClInclude Include="ITile.h" />
+    <ClInclude Include="KeyboardInput.h" />
+    <ClInclude Include="KeyEvent.h" />
+    <ClInclude Include="KeyListener.h" />
+    <ClInclude Include="Level1.h" />
+    <ClInclude Include="Loader.h" />
+    <ClInclude Include="LoadingState.h" />
+    <ClInclude Include="LoadResourcesEvent.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MouseEvent.h" />
+    <ClInclude Include="MouseInput.h" />
+    <ClInclude Include="MouseListener.h" />
+    <ClInclude Include="MovableEntity.h" />
+    <ClInclude Include="MovableEntityList.h" />
+    <ClInclude Include="Options.h" />
+    <ClInclude Include="PauseGameState.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Player1.h" />
+    <ClInclude Include="Player2.h" />
+    <ClInclude Include="PlayerManager.h" />
+    <ClInclude Include="PlayerOutOfBoundsEvent.h" />
+    <ClInclude Include="precompiled.h" />
+    <ClInclude Include="ResourceRequest.h" />
+    <ClInclude Include="ResourceLoadingCompletedEvent.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="ScoreManager.h" />
+    <ClInclude Include="SolidTile.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="UIButton.h" />
+    <ClInclude Include="UIWidget.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Identifier.h" />
+    <ClInclude Include="VoidTile.h" />
+    <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Broadcaster.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="CoinManager.cpp" />
+    <ClCompile Include="CollisionLogic.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
+    <ClCompile Include="Cursor.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityList.cpp" />
+    <ClCompile Include="EventIdentifier.cpp" />
+    <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="Field.cpp" />
+    <ClCompile Include="FontResource.cpp" />
+    <ClCompile Include="Force.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameAppFramework.cpp" />
+    <ClCompile Include="GameRunning.cpp" />
+    <ClCompile Include="GameStateChangeEvent.cpp" />
+    <ClCompile Include="GameStateManager.cpp" />
+    <ClCompile Include="GetToPreviousStateEvent.cpp" />
+    <ClCompile Include="GoalPost.cpp" />
+    <ClCompile Include="GoalScoredEvent.cpp" />
+    <ClCompile Include="IEvent.cpp" />
+    <ClCompile Include="IGameState.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="IResource.cpp" />
+    <ClCompile Include="KeyboardInput.cpp" />
+    <ClCompile Include="KeyEvent.cpp" />
+    <ClCompile Include="Level1.cpp" />
+    <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="LoadingState.cpp" />
+    <ClCompile Include="LoadResourcesEvent.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MouseEvent.cpp" />
+    <ClCompile Include="MouseInput.cpp" />
+    <ClCompile Include="MovableEntity.cpp" />
+    <ClCompile Include="MovableEntityList.cpp" />
+    <ClCompile Include="Options.cpp" />
+    <ClCompile Include="PauseGameState.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Player1.cpp" />
+    <ClCompile Include="Player2.cpp" />
+    <ClCompile Include="PlayerManager.cpp" />
+    <ClCompile Include="PlayerOutOfBoundsEvent.cpp" />
+    <ClCompile Include="precompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">precompiled.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="ResourceLoadingCompletedEvent.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="ResourceRequest.cpp" />
+    <ClCompile Include="ScoreManager.cpp" />
+    <ClCompile Include="SolidTile.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Identifier.cpp" />
+    <ClCompile Include="UIButton.cpp" />
+    <ClCompile Include="VoidTile.cpp" />
+    <ClCompile Include="World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\Textures\Ball.jpg" />
+    <Image Include="..\Resources\Textures\BluePlayer.jpg" />
+    <Image Include="..\Resources\Textures\LeftGoalPost.jpg" />
+    <Image Include="..\Resources\Textures\RedPlayer.jpg" />
+    <Image Include="..\Resources\Textures\RightGoalPost.jpg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
